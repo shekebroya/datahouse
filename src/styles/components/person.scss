@@ -1,0 +1,46 @@
+.person .table__row__column {
+  text-align: center;
+}
+.person__image {
+  overflow: hidden;
+  border-radius: 8px;
+  width: 142px;
+  height: 142px;
+  border: 2px solid $grey;
+  margin: $s-size auto $m-size;
+}
+.person__image__shekeb {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  width: 200px;
+  position: relative;
+  top: -45px;
+  left: -30px;
+}
+
+@media (min-width: $tablet) {
+  .person__image {
+    width: 231px;
+    height: 231px;
+    margin: 0;
+  }
+  .person__image__shekeb {
+    width: 350px;
+    top: -80px;
+    left: -70px;
+  }
+  .person .table__row__column:first-child {
+    width: 144px;
+    padding: 0;
+    text-align: left;
+  }
+  .person .table__row__column:last-child {
+    width: 233px;
+    padding: 0;
+    text-align: left;
+  }
+}

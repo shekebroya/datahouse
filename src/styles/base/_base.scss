@@ -1,0 +1,149 @@
+*, :after, :before {
+  box-sizing: border-box;
+  outline: none;
+}
+html {
+  font-size: 10px;
+}
+body {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-size: $s-size;
+  line-height: 1.2;
+  font-weight: 400;
+  padding: 0 $s-size;
+}
+button, input, optgroup, select, textarea {
+  line-height: 1;
+}
+h1 {
+  font-size: $m-size;
+  margin: $s-size 0;
+}
+h2 {
+  font-size: $s-size;
+  padding: 0 16px;
+}
+p {
+  padding: 0 16px;
+}
+strong {
+  font-weight: 500;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+.section {
+    border: 1px solid #ccc;
+    border-radius: $xs-size;
+    margin-bottom: $s-size;
+}
+.center {
+  text-align: center;
+}
+.flex-container {
+  @include flexbox();
+  @include flex-direction(column-reverse);
+  margin-bottom: $l-size;
+}
+.table, .table__row  {
+  @include flexbox();
+  @include flex-flow(column nowrap);
+}
+.table__row__column {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.table__row__column:first-child {
+  line-height: 2;
+  font-weight: 500;
+}
+.table__row__column:last-child {
+  margin-bottom: $s-size;
+}
+.ref {
+  padding: 0;
+  text-align: center;
+}
+.table__row__column-left {
+  width: 233px;
+}
+.table__row__column-right {
+  width: 377px;
+  padding-left: $m-size;
+}
+.table__row__column__img {
+  width: 233px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.table-space {
+  margin-bottom: $m-size;
+}
+.table-space p {
+  padding: 0;
+}
+.image-link {
+  position: relative;
+  overflow: hidden;
+}
+.mask {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  color: #fff;
+  width: 100%;
+  height: 233px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  @include transition(opacity 0.3s ease-out, background-color 0.3s ease-out);
+}
+.image-link:hover .mask {
+  opacity: 1;
+}
+
+@media (min-width: $tablet) {
+  .container {
+    width: 610px;
+    padding: 0;
+  }
+  body {
+    line-height: 1.5;
+    padding: 0 $xl-size;
+  }
+  h1 {
+    font-size: $l-size;
+    margin: $xl-size 0;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: $m-size;
+    font-weight: 500;
+  }
+  .section {
+      margin-bottom: $l-size;
+  }
+  .flex-container {
+    @include flexbox();
+    @include justify-content(center);
+    @include flex-direction(row);
+  }
+  .table__row {
+    @include flex-flow(row nowrap);
+  }
+  .table__row__column:first-child {
+    line-height: 1.5;
+    font-weight: 400;
+    width: 233px;
+    padding-left: 16px;
+    padding-right: 0;
+  }
+  .table__row__column:last-child {
+    width: 377px;
+    padding-right: 16px;
+    padding-left: 0;
+  }
+}
